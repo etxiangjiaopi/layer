@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{margin: 0;padding: 0;}
+    </style>
+</head>
+<body>
+<button onclick="ask()">询问</button>
+<button onclick="load()">加载</button>
+<button onclick="tip()">提示</button>
+<button onclick="styles()">样式</button>
+<button onclick="doms()">元素</button>
+<div class="hide" style="display: none">dsfdsfdsf</div>
+<script src="jq.js"></script>
+<script src="json.js"></script>
+<script src="layer.js"></script>
+<script>
+    function ask(){
+        layer.open({
+            title: ['进行选择'],
+            content: '你是想确认呢，还是想取消呢？',
+            btn: ['取消','确认'],
+            yes: function(){
+                layer.open({content: '你选择了取消',time: 1});
+            }, no: function(){
+                layer.open({content: '你选择了确认',time: 1});
+            }
+        });
+    }
+    function load(){
+        layer.open({type: 2,shade: false});
+    }
+    function tip(){
+        layer.open({
+            title: ['进行选择'],
+            content: '你是想确认呢，还是想取消呢？',
+            btn: ['确认'],
+            yes: function(){
+                layer.open({content: '你选择了确认',time: 1});
+            }
+        });
+    }
+    function styles(){
+        layer.open({
+            title: ['进行选择'],
+            content: '你是想确认呢，还是想取消呢？',
+            btn: ['取消','确认'],
+            width: 600,
+            height: 250,
+            yes: function(){
+                layer.open({content: '你选择了取消',time: 1});
+            }, no: function(){
+                layer.open({content: '你选择了确认',time: 1});
+            }
+        });
+    }
+    function doms(){
+        layer.open({
+            title: ['进行选择'],
+            content: $(".hide"),
+            btn: ['取消','确认'],
+            width: 600,
+            height: 250,
+            yes: function(){
+                layer.open({content: '你选择了取消',time: 1});
+            }, no: function(){
+                layer.open({content: '你选择了确认',time: 1});
+            }
+        });
+    }
+</script>
+</body>
+</html>
